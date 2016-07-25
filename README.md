@@ -1,10 +1,10 @@
 # jail
 
-Jail chroot construction kit. 
+Jail chroot construction kit for Linux.
 
 Sample usage to generate and start a Teamspeak 3 jail:
 
-```shell
+```
 start-stop-daemon --start --background --quiet --user teamspeak3 \
         --startas /usr/local/bin/jail -- \
         teamspeak3 --defaults --verbose --dns \
@@ -16,6 +16,10 @@ start-stop-daemon --start --background --quiet --user teamspeak3 \
 ```
 
 The generated jails will be on separate filesystems that are by default very restricted and will only contain binaries needed. They run as a nonprivileged user, and with a stripped-down `/etc` and minimal `/dev` nodes.
+
+## Requirements
+
+A Linux distribution with support for bind mounts that also supports the `ld-linux.so --list` and `ldconfig -p` commands. I don't know of any that doesn't. The jails should also work on OpenVZ VM's and possibly also under other container solutions that fulfill the requirements.
 
 ## Usage
 
