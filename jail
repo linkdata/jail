@@ -1,0 +1,14 @@
+#!/usr/bin/python
+
+__copyright__ = "Copyright \302\251 2012 Johan Lindh"
+__license__ = "GPL"
+__author__ = "Johan Lindh <johan@linkdata.se>"
+
+import sys, cli, jail
+
+if __name__ == '__main__':
+	try:
+		sys.exit(jail.Jail().parse(sys.argv[1:]))
+	except (cli.CommandLineError, OSError) as jailexception: # OSError
+		print >> sys.stderr, sys.argv[0] + ': ' + str(jailexception)
+		sys.exit(2)
