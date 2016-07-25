@@ -6,7 +6,7 @@ the shadowed and actual filesystems.
 """
 
 __copyright__ = "Copyright \302\251 2012 Johan Lindh"
-__license__ = "GPL"
+__license__ = "MIT"
 __author__ = "Johan Lindh <johan@linkdata.se>"
 
 import sys, os, stat, errno, time, pwd, grp
